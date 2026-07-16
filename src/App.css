@@ -1,5 +1,5 @@
 .App-header {
-  background-color: #72c5ee;
+  /* background-color: #72c5ee; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,4 +11,29 @@
 
 .App-link {
   color: #000000;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: "mainfont";
+  src: url("./assets/fonts/fontsBold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "mainfont";
+  src: url("./assets/fonts/fontsRegular.otf");
+  font-weight: 400;
+}
+
+body {
+  font-family: "mainfont", sans-serif;
 }

@@ -1,9 +1,15 @@
 
 import './App.css';
+import background from './assets/수심100.jpg';
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${background})`
+      }}
+    >
       <header className="App-header">
         <p>
           수심 100m
