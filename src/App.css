@@ -37,3 +37,123 @@
 body {
   font-family: "mainfont", sans-serif;
 }
+
+.guest-book-button {
+  font-family: "mainfont", sans-serif;
+  font-size: 1.1rem;
+
+  position: absolute;
+
+  top: 30px;
+  right: 40px;
+
+  background: transparent;
+
+  color: white;
+
+  border: 1px solid white;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+}
+
+.guestbook-page {
+  min-height: 100vh;
+
+  background: #111;
+
+  color: white;
+
+  padding: 60px;
+}
+
+.guestbook-title {
+  margin-top: 50px;
+
+  text-align: center;
+
+  font-size: 40px;
+}
+
+.guestbook-form {
+  width: 600px;
+
+  margin: 50px auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+}
+
+.submit-button {
+  padding: 15px;
+
+  background-color: #54a9ffd0;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  font-family: "mainfont", sans-serif;
+}
+
+.back-button {
+  position: absolute;
+
+  top: 30px;
+
+  right: 40px;
+
+  font-family: "mainfont", sans-serif;
+
+  padding: 5px 10px;
+}
+
+/* .guestbook-list {
+
+  top: 600px;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid white;
+
+  padding: 3px 600px;
+
+  margin: 50px auto;
+} */
+
+.guestbook-item {
+  border: 2px solid white;
+
+  width: 580px;
+
+  margin: 50px auto;
+
+  margin-bottom: 5px;
+
+  padding-left: 15px;
+}
+
+.guestbook-item h3 {
+  font-weight: bold;
+}
+
+.guestbook-item p {
+  font-weight: 200;
+}

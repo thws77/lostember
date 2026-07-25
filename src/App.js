@@ -1,30 +1,19 @@
 
-import './App.css';
-import background from './assets/수심100.jpg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import GuestBook from "./pages/GuestBook";
 
 function App() {
   return (
-    <div
-      className="App"
-      style={{
-        backgroundImage: `url(${background})`
-      }}
-    >
-      <header className="App-header">
-        <p>
-          수심 100m
-        </p>
-        <a
-          className="App-link"
-          href="https://www.youtube.com/watch?v=Klh683_rUmw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          더 깊은 곳으로
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/guestbook" element={<GuestBook />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
