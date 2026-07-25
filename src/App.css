@@ -112,15 +112,23 @@ body {
 }
 
 .back-button {
+  font-family: "mainfont", sans-serif;
+  font-size: 1.1rem;
+
   position: absolute;
 
   top: 30px;
-
   right: 40px;
 
-  font-family: "mainfont", sans-serif;
+  background: transparent;
 
-  padding: 5px 10px;
+  color: white;
+
+  border: 1px solid white;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
 }
 
 /* .guestbook-list {
