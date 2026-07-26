@@ -6,12 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function Home() {
     const navigate = useNavigate();
     return (
-        <div
-            className="App"
-            style={{
-                backgroundImage: `url(${background})`
-            }}
-        >
+        <div className="App">
             <button
                 className="guest-book-button"
                 onClick={() => navigate("/guestbook")}
