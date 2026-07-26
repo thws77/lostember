@@ -87,7 +87,11 @@ function GuestBook() {
                 </textarea>
 
                 <button className="submit-button"
-                    onClick={addGuestBook}>
+                    onClick={() => {
+                        if (window.confirm("등록하면 수정이 불가능합니다.")) {
+                            addGuestBook();
+                        }
+                    }}>
                     등록
                 </button>
             </div>

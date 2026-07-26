@@ -131,21 +131,6 @@ body {
   cursor: pointer;
 }
 
-/* .guestbook-list {
-
-  top: 600px;
-
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border: 2px solid white;
-
-  padding: 3px 600px;
-
-  margin: 50px auto;
-} */
-
 .guestbook-item {
   border: 2px solid white;
 
