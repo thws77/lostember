@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "mainfont";
+    src: url("../assets/fonts/fontsBold.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "mainfont";
+    src: url("../assets/fonts/fontsRegular.otf");
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+    font-family: "mainfont", sans-serif;
+}

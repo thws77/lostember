@@ -1,5 +1,5 @@
 
-import '../App.css';
+import '../styles/Home.css';
 import background from '../assets/수심100.jpg';
 import { useNavigate } from 'react-router-dom'
 
