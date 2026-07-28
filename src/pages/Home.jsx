@@ -118,6 +118,7 @@ export default Home; */
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import { useRef, useEffect } from "react";
+import { smoothScroll } from "../utils/smoothScroll";
 
 
 
@@ -150,16 +151,25 @@ function Home() {
     const depth500 = useRef(null);
 
     const go100 = () => {
-        depth100.current.scrollIntoView({
-            behavior: "smooth"
-        });
-    }
+
+        smoothScroll(
+            appRef.current,
+            depth100.current,
+
+            2000
+        );
+    };
 
     const go500 = () => {
-        depth500.current.scrollIntoView({
-            behavior: "smooth"
-        });
+
+        smoothScroll(
+            appRef.current,
+            depth500.current,
+
+            2000
+        );
     };
+
     return (
         <div className="App"
             ref={appRef}>

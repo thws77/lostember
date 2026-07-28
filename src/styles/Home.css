@@ -7,8 +7,13 @@ html {
 .App {
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     scrollbar-width: none;
+
+    transition: filter 2s;
+
+    position: relative;
 }
 
 .App::-webkit-scrollbar {
@@ -24,6 +29,7 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 .content {
@@ -33,7 +39,6 @@ html {
     color: white;
     font-size: calc(10px + 2vmin);
     font-family: "mainfont", sans-serif;
-    overflow: hidden;
 }
 
 .depth100 {
