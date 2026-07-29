@@ -16,17 +16,46 @@ function Home() {
 
         if (!app) return;
 
-        const stopWheel = (e) => {
+        const stopScroll = (e) => {
             e.preventDefault();
         };
 
-        app.addEventListener("wheel", stopWheel, {
+        const stopKey = (e) => {
+            const keys = [
+                "ArrowUp",
+                "ArrowDown",
+                "PageUp",
+                "PageDown",
+                "Home",
+                "End",
+                " ",
+                "Spacebar"
+            ];
+            if (keys.includes(e.key)) {
+                e.preventDefault();
+            }
+        };
+
+        app.addEventListener("wheel", stopScroll, {
             passive: false,
         });
 
+        app.addEventListener("touchmove", stopScroll, {
+            passive: false,
+        });
+
+        window.addEventListener("keydown", stopKey);
+
         return () => {
-            app.removeEventListener("wheel", stopWheel);
+
+            app.removeEventListener("wheel", stopScroll);
+
+            app.removeEventListener("touchmove", stopScroll);
+
+            window.removeEventListener("keydown", stopKey);
+
         };
+
     }, []);
 
 
