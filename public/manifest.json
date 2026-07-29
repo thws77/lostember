@@ -3,18 +3,18 @@
   "name": "깊고 깊은 곳으로",
   "icons": [
     {
-      "src": "set.png",
+      "src": "logo001.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "set.png",
-      "type": "image/png",
+      "src": "logo001.jpg",
+      "type": "image/jpg",
       "sizes": "192x192"
     },
     {
-      "src": "set.png",
-      "type": "image/png",
+      "src": "logo001.jpg",
+      "type": "image/jpg",
       "sizes": "512x512"
     }
   ],
