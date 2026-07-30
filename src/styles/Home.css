@@ -42,6 +42,12 @@ html {
     color: white;
     font-size: calc(10px + 2vmin);
     font-family: "mainfont", sans-serif;
+
+    background: rgba(0, 0, 0, 0.35);
+    padding: 50px 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .depth100 {
