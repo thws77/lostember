@@ -1,18 +1,37 @@
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { smoothScroll } from "../utils/smoothScroll";
-
-
+import bgm from "../assets/Lost ember.mp3";
+import { FaMusic } from "react-icons/fa";
+import { CiPause1 } from "react-icons/ci";
 
 function Home() {
     const navigate = useNavigate();
 
     const appRef = useRef(null);
 
+    const [playing, setPlaying] = useState(false);
+
+    const audioRef = useRef(new Audio(bgm));
+
+
+    const toggleMusic = () => {
+        if (playing) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+
+        setPlaying(prev => !prev);
+    };
+
     useEffect(() => {
 
         const app = appRef.current;
+
+        audioRef.current.loop = true;
+        audioRef.current.volume = 0.5;
 
         if (!app) return;
 
@@ -93,6 +112,16 @@ function Home() {
                 방명록
             </button>
 
+            <button
+                className="bgm-button"
+                onClick={() => {
+                    if (!playing && (window.confirm("BGM을 재생하시겠습니까?"))) {
+                        toggleMusic();
+                    } else toggleMusic();
+                }}>
+                {playing ? <CiPause1 /> : <FaMusic />}
+            </button>
+
             <section
                 ref={depth100}
                 className="screen depth100"
@@ -127,7 +156,7 @@ function Home() {
                     </button>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }
 
