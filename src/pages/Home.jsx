@@ -149,9 +149,13 @@ function Home() {
             <button
                 className="bgm-button"
                 onClick={() => {
-                    if (!playing && (window.confirm("BGM을 재생하시겠습니까?"))) {
+                    if (playing) {
                         toggleMusic();
-                    } else toggleMusic();
+                        return;
+                    }
+                    if (window.confirm("BGM을 재생하시겠습니까?")) {
+                        toggleMusic();
+                    }
                 }}>
                 {playing ? <CiPause1 /> : <FaMusic />}
             </button>
