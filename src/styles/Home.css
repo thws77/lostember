@@ -43,7 +43,7 @@ html {
     font-size: calc(10px + 2vmin);
     font-family: "mainfont", sans-serif;
 
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.25);
     padding: 50px 60px;
     border-radius: 20px;
     backdrop-filter: blur(8px);
@@ -58,11 +58,23 @@ html {
     background-image: url("../assets/수심500.jpg");
 }
 
+.depth1000 {
+    background-image: url("../assets/수심1000.jpg");
+}
+
+.depth5000 {
+    background-image: url("../assets/수심5000.jpg");
+}
+
+.depth-bottom {
+    background-image: url("../assets/바닥.jpg");
+}
+
 .App-link {
     margin-top: 20px;
     background: none;
     border: none;
-    color: black;
+    color: rgb(250, 0, 0);
     font-size: 1.3rem;
     font-family: "mainfont", sans-serif;
     cursor: pointer;
@@ -106,6 +118,18 @@ html {
 
     .depth500 {
         background-image: url("../assets/수심500모바일.jpg");
+    }
+
+    .depth1000 {
+        background-image: url("../assets/수심1000모바일.jpg");
+    }
+
+    .depth5000 {
+        background-image: url("../assets/수심5000모바일.jpg");
+    }
+
+    .depth-bottom {
+        background-image: url("../assets/바닥모바일.jpg")
     }
 }
 
