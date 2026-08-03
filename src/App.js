@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import Home from "./pages/Home";
 import GuestBook from "./pages/GuestBook";
 
-import bgm from "./assets/Lost ember.mp3";
+import bgm from "./assets/Lost ember최종.mp3";
 
 
 function App() {
