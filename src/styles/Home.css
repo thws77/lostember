@@ -51,23 +51,23 @@ html {
 }
 
 .depth100 {
-    background-image: url("../assets/new_background/수심100.png");
+    background-image: url("../assets/new_background/depth100.png");
 }
 
 .depth500 {
-    background-image: url("../assets/new_background/수심500.png");
+    background-image: url("../assets/new_background/depth500.png");
 }
 
 .depth1000 {
-    background-image: url("../assets/new_background/수심1000.png");
+    background-image: url("../assets/new_background/depth1000.png");
 }
 
 .depth5000 {
-    background-image: url("../assets/new_background/수심5000.png");
+    background-image: url("../assets/new_background/depth5000.png");
 }
 
 .depth-bottom {
-    background-image: url("../assets/new_background/심해저.png");
+    background-image: url("../assets/new_background/seabed.png");
 }
 
 .App-link {
@@ -131,23 +131,23 @@ html {
 
 @media(max-width:768px) {
     .depth100 {
-        background-image: url("../assets/new_background/수심100모바일.png");
+        background-image: url("../assets/new_background/depth100mobile.png");
     }
 
     .depth500 {
-        background-image: url("../assets/new_background/수심500모바일.png");
+        background-image: url("../assets/new_background/depth500mobile.png");
     }
 
     .depth1000 {
-        background-image: url("../assets/new_background/수심1000모바일.png");
+        background-image: url("../assets/new_background/depth1000mobile.png");
     }
 
     .depth5000 {
-        background-image: url("../assets/new_background/수심5000모바일.png");
+        background-image: url("../assets/new_background/depth5000mobile.png");
     }
 
     .depth-bottom {
-        background-image: url("../assets/new_background/심해저모바일.png")
+        background-image: url("../assets/new_background/seabedmobile.png")
     }
 
     .bgm-button {
