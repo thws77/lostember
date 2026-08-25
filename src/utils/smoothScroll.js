@@ -1,32 +1,37 @@
 export function smoothScroll(container, target, duration = 3000) {
-    const start = container.scrollTop;
+    return new Promise((resolve) => {
 
-    const end = target.offsetTop;
+        const start = container.scrollTop;
 
-    const distance = end - start;
+        const end = target.offsetTop;
 
-    let startTime = null;
+        const distance = end - start;
 
-    function animate(currentTime) {
+        let startTime = null;
 
-        if (!startTime) {
-            startTime = currentTime;
+        function animate(currentTime) {
+
+            if (!startTime) {
+                startTime = currentTime;
+            }
+
+            const elapsed = currentTime - startTime;
+
+            const progress = Math.min(elapsed / duration, 1);
+
+            const ease =
+                progress < 0.5
+                    ? 2 * progress * progress
+                    : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+            container.scrollTop = start + distance * ease;
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                resolve();
+            }
         }
-
-        const elapsed = currentTime - startTime;
-
-        const progress = Math.min(elapsed / duration, 1);
-
-        const ease =
-            progress < 0.5
-                ? 2 * progress * progress
-                : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-        container.scrollTop = start + distance * ease;
-
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        }
-    }
-    requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
+    });
 }

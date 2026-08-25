@@ -129,6 +129,25 @@ html {
     z-index: 999;
 }
 
+.fade-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: black;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transition: opacity 0.8s ease;
+}
+
+.fade-overlay.active {
+    opacity: 1;
+}
+
 @media(max-width:768px) {
     .depth100 {
         background-image: url("../assets/new_background/depth100mobile.png");

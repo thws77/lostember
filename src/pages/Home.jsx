@@ -1,6 +1,6 @@
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { smoothScroll } from "../utils/smoothScroll";
 import { FaMusic } from "react-icons/fa";
 import { CiPause1 } from "react-icons/ci";
@@ -9,6 +9,7 @@ function Home({ playing, toggleMusic }) {
     const navigate = useNavigate();
 
     const appRef = useRef(null);
+    const [fading, setFading] = useState(false);
 
     useEffect(() => {
 
@@ -65,60 +66,45 @@ function Home({ playing, toggleMusic }) {
     const depth5000 = useRef(null);
     const depthBottom = useRef(null);
 
-    const go100 = () => {
+    const moveTo = async (target, duration) => {
 
-        smoothScroll(
+        setFading(true);
+
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        await smoothScroll(
             appRef.current,
-            depth100.current,
-
-            2000
+            target,
+            duration
         );
+
+        setFading(false);
+    }
+    const go100 = () => {
+        moveTo(depth100.current, 200);
     };
 
     const go500 = () => {
-
-        smoothScroll(
-            appRef.current,
-            depth500.current,
-
-            2000
-        );
+        moveTo(depth500.current, 200);
     };
 
     const go1000 = () => {
-
-        smoothScroll(
-            appRef.current,
-            depth1000.current,
-
-            3500
-        );
+        moveTo(depth1000.current, 700);
     };
 
 
     const go5000 = () => {
-
-        smoothScroll(
-            appRef.current,
-            depth5000.current,
-
-            5000
-        );
+        moveTo(depth5000.current, 1200);
     };
 
     const goBottom = () => {
-
-        smoothScroll(
-            appRef.current,
-            depthBottom.current,
-
-            6500
-        );
+        moveTo(depthBottom.current, 1700);
     };
 
     return (
         <div className="App"
             ref={appRef}>
+            <div className={`fade-overlay ${fading ? "active" : ""}`} />
             <div className="top-buttons">
                 <button
                     className="guest-book-button"
