@@ -104,7 +104,24 @@ function Home({ playing, toggleMusic }) {
     return (
         <div className="App"
             ref={appRef}>
-            <div className={`fade-overlay ${fading ? "active" : ""}`} />
+            <div className={`fade-overlay ${fading ? "active" : ""}`}>
+                <div className="bubble bubble1"></div>
+                <div className="bubble bubble2"></div>
+                <div className="bubble bubble3"></div>
+                <div className="bubble bubble4"></div>
+                <div className="bubble bubble5"></div>
+                <div className="bubble bubble6"></div>
+                <div className="bubble bubble7"></div>
+                <div className="bubble bubble8"></div>
+                <div className="bubble bubble9"></div>
+                <div className="bubble bubble10"></div>
+                <div className="bubble bubble11"></div>
+                <div className="bubble bubble12"></div>
+                <div className="bubble bubble13"></div>
+                <div className="bubble bubble14"></div>
+                <div className="bubble bubble15"></div>
+                <div className="bubble bubble16"></div>
+            </div>
             <div className="top-buttons">
                 <button
                     className="guest-book-button"
