@@ -17,7 +17,7 @@ function Home({ playing, toggleMusic }) {
     const [state, setState] = useState("");
     const [reason, setReason] = useState("");
     const [need, setNeed] = useState("");
-    const [letter, setLetter] = useState("");
+    /* const [letter, setLetter] = useState(""); */
 
     useEffect(() => {
 
