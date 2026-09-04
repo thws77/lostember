@@ -374,8 +374,7 @@ function Home({ playing, toggleMusic }) {
                             </button>
 
                             <button
-                                className="letter-button"
-                                onClick={() => setLetter(true)}>
+                                className="letter-button">
                                 비석에 충분히 글을 새겼다.
                             </button>
                         </div>
