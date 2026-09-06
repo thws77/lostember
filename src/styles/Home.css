@@ -598,14 +598,14 @@ html {
 
 @media(max-width:500px) {
     .popup-box2 {
-        max-height: 300px;
+        max-height: 360px;
     }
 
     .popup-box3 {
-        max-height: 300px;
+        max-height: 360px;
     }
 
-    .check-button {
+    .App-link {
         white-space: nowrap;
     }
 }
