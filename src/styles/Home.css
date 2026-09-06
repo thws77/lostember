@@ -596,4 +596,18 @@ html {
     }
 }
 
+@media(max-width:500px) {
+    .popup-box2 {
+        max-height: 300px;
+    }
+
+    .popup-box3 {
+        max-height: 300px;
+    }
+
+    .check-button {
+        white-space: nowrap;
+    }
+}
+
 /* it's test, and I love you my Space bar. */
