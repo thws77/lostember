@@ -596,7 +596,7 @@ html {
     }
 }
 
-@media(max-width:500px) {
+@media(max-width:360px) {
     .popup-box2 {
         max-height: 420px;
     }
