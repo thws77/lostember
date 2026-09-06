@@ -598,11 +598,11 @@ html {
 
 @media(max-width:500px) {
     .popup-box2 {
-        max-height: 360px;
+        max-height: 420px;
     }
 
     .popup-box3 {
-        max-height: 360px;
+        max-height: 420px;
     }
 
     .App-link {
