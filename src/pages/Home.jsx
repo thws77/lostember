@@ -140,9 +140,13 @@ function Home({ playing, toggleMusic }) {
         if (!app) return;
 
         const stopScroll = (e) => {
-            if (e.target.closest(".letter")) {
+            if (
+                e.target.closest(".popup-box2") ||
+                e.target.closest(".popup-box3")
+            ) {
                 return;
             }
+
             e.preventDefault();
         };
 

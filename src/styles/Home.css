@@ -15,7 +15,6 @@ html {
 
     position: relative;
 
-    touch-action: none;
     overscroll-behavior: none;
 }
 
@@ -155,6 +154,7 @@ html {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    overflow: hidden;
 }
 
 .popup-box {
@@ -169,27 +169,41 @@ html {
 }
 
 .popup-box2 {
-    position: relative;
     width: 70%;
     max-width: 600px;
-    padding: 10px;
-    padding-bottom: 60px;
+    max-height: calc(100vh - 40px);
     background: rgba(10, 20, 25, 1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     color: white;
+    padding: 25px 15px 65px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    line-height: 1.5;
 }
 
 .popup-box3 {
     position: relative;
     width: 70%;
     max-width: 600px;
-    padding: 10px;
-    padding-bottom: 30px;
     background: rgba(10, 20, 25, 1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
     color: white;
+    max-height: calc(100vh - 40px);
+    padding: 25px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popup-box2,
+.popup-box3 {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
 }
 
 .popup-box h2 {
@@ -524,9 +538,9 @@ html {
         width: calc(100vw - 30px);
         max-width: 650px;
 
-        max-height: 80vh;
+        max-height: calc(100vh - 30px);
 
-        padding: 25px 15px 65px;
+        padding: 25px 15px 30px;
 
         box-sizing: border-box;
 
@@ -536,7 +550,7 @@ html {
         overflow-wrap: break-word;
         word-break: keep-all;
 
-        line-height: 0.7;
+        line-height: 1.5;
     }
 
 
@@ -544,9 +558,9 @@ html {
         width: calc(100vw - 30px);
         max-width: 500px;
 
-        max-height: 80vh;
+        max-height: calc(100vh - 30px);
 
-        padding: 25px 20px;
+        padding: 25px 20px 30px;
 
         box-sizing: border-box;
 
@@ -555,6 +569,21 @@ html {
 
         overflow-wrap: break-word;
         word-break: keep-all;
+    }
+
+    .letter-button {
+        position: static;
+
+        margin-top: 25px;
+
+        white-space: nowrap;
+
+        font-size: 0.95rem;
+
+        max-width: 100%;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .X-button {
@@ -595,6 +624,12 @@ html {
 
         overflow: hidden;
         text-overflow: ellipsis;
+
+        position: static;
+
+        transform: none;
+
+        white-space: nowrap;
     }
 }
 
