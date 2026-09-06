@@ -287,12 +287,6 @@ function Home({ playing, toggleMusic }) {
                     >
                         더 깊은 곳으로
                     </button>
-                    <button
-                        className="App-link"
-                        onClick={goNerea}
-                    >
-                        단숨에 바닥까지
-                    </button>
                 </div>
             </section>
 
