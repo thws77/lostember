@@ -12,11 +12,126 @@ function Home({ playing, toggleMusic }) {
     const [fading, setFading] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const [showPopup2, setShowPopup2] = useState(false);
+    const [showPopup3, setShowPopup3] = useState(false);
 
     const [name, setName] = useState("");
     const [state, setState] = useState("");
     const [reason, setReason] = useState("");
     const [need, setNeed] = useState("");
+    const [letter, setLetter] = useState("");
+
+    const [needMessage, setNeedMessage] = useState("");
+    const [needParticle2, setNeedParticle2] = useState("");
+
+    const makeLetter = () => {
+        let needParticle = "";
+        let stateMessage = "";
+
+        if (need === "위로" || need === "용기") {
+            needParticle = "가";
+        } else {
+            needParticle = "이";
+        }
+
+        if (need === "위로" || need === "용기") {
+            setNeedParticle2("를");
+        } else {
+            setNeedParticle2("을");
+        }
+
+        if (!name) {
+            alert("비석에 충분히 글을 새기지 않은 것 같다.")
+            return;
+        }
+        if (!state) {
+            alert("비석에 충분히 글을 새기지 않은 것 같다.")
+            return;
+        }
+        if (!reason) {
+            alert("비석에 충분히 글을 새기지 않은 것 같다.")
+            return;
+        }
+        if (!need) {
+            alert("비석에 충분히 글을 새기지 않은 것 같다.")
+            return;
+        }
+
+        if (state === "멀쩡") {
+            stateMessage = "하하, 깊이 내려왔는데도 쌩쌩하네?";
+        }
+
+        if (state === "지침") {
+            stateMessage = "조금 지친 것 같네. 어깨가 축 처졌어.";
+        }
+
+        if (state === "힘듦") {
+            stateMessage = "많이 지친 모양이야. 힘들었지?";
+        }
+
+        if (state === "만신창이") {
+            stateMessage = "만신창이가 되었구나, 가엾게도...";
+        }
+
+        if (need === "위로") {
+            setNeedMessage("https://www.youtube.com/watch?v=COBqmxYaXks");
+        }
+
+        if (need === "용기") {
+            setNeedMessage("https://www.youtube.com/watch?v=rx0CBt56bFc");
+        }
+
+        if (need === "휴식") {
+            setNeedMessage("https://www.youtube.com/watch?v=Z7ZVro-9vhE");
+        }
+
+        const firstLines = [
+            "여기까지 오느라 고생 많았어.",
+            "결국 이곳에 도달했구나.",
+            "오랫동안 너를 기다렸어."
+        ]
+
+        const secondLines = [
+            "고래가 사는 바다를 지나, 해파리와 춤을 추고, 동굴 속으로 몸을 던지기까지...",
+            "숨을 크게 들이쉬고 더욱 더 깊은 곳으로 뛰어들어서...",
+            "빛이 사라지는 것을 느끼며 점점 더 산소가 희박한 곳으로..."
+        ]
+
+        const thirdLines = [
+            "정말 깊이 왔네, 그렇지?",
+            "어마어마한 대장정이었네, 그렇지?",
+            "긴 여정이었네, 그렇지?"
+        ]
+
+        const randomFirst =
+            firstLines[Math.floor(Math.random() * firstLines.length)];
+
+        const randomSecond =
+            secondLines[Math.floor(Math.random() * secondLines.length)];
+
+
+        const randomThird =
+            thirdLines[Math.floor(Math.random() * thirdLines.length)];
+
+
+        const newLetter = `${name}!
+        ${randomFirst}
+        ${stateMessage}
+        실은, 아주 멀리서 너의 활약을 지켜보고 있었어.
+        ${randomSecond}
+        ${randomThird}
+        어디보자, 너는...
+        ${reason}... 그래서 이곳까지 온 거구나.
+        어때? 목표는 달성했어?
+        괜찮아.
+        원하는 걸 찾았어도, 그렇지 못했어도,
+        여기까지 온 것만으로도 박수 받을 일이니까...
+        고생했어.
+        마지막으로, ${need}${needParticle} 필요한 너에게 노래 한 곡을 들려줄게.`;
+
+        setLetter(newLetter);
+        setShowPopup2(false);
+        setShowPopup3(true);
+    };
 
     useEffect(() => {
 
@@ -25,6 +140,9 @@ function Home({ playing, toggleMusic }) {
         if (!app) return;
 
         const stopScroll = (e) => {
+            if (e.target.closest(".letter")) {
+                return;
+            }
             e.preventDefault();
         };
 
@@ -374,8 +492,36 @@ function Home({ playing, toggleMusic }) {
                             </button>
 
                             <button
-                                className="letter-button">
+                                className="letter-button"
+                                onClick={() => {
+                                    makeLetter();
+                                }}>
                                 비석에 충분히 글을 새겼다.
+                            </button>
+                        </div>
+                    </div>
+                )}
+                {showPopup3 && (
+                    <div className="popup">
+                        <div className="popup-box3">
+                            <h2>신비로운 비석</h2>
+
+                            <div className="letter">
+                                <p>{letter}</p>
+                                <a
+                                    href={needMessage}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {need}{needParticle2} 위해...
+                                </a>
+                            </div>
+
+                            <button
+                                className="X-button"
+                                onClick={() => setShowPopup3(false)}
+                            >
+                                X
                             </button>
                         </div>
                     </div>
