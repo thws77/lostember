@@ -140,6 +140,7 @@ function Home({ playing, toggleMusic }) {
         if (!app) return;
 
         const stopScroll = (e) => {
+
             if (
                 e.target.closest(".popup-box2") ||
                 e.target.closest(".popup-box3")
@@ -151,6 +152,14 @@ function Home({ playing, toggleMusic }) {
         };
 
         const stopKey = (e) => {
+
+            if (
+                e.target.closest(".popup-box2") ||
+                e.target.closest(".popup-box3")
+            ) {
+                return;
+            }
+
             const keys = [
                 "ArrowUp",
                 "ArrowDown",
@@ -161,6 +170,7 @@ function Home({ playing, toggleMusic }) {
                 " ",
                 "Spacebar"
             ];
+
             if (keys.includes(e.key)) {
                 e.preventDefault();
             }
@@ -187,6 +197,44 @@ function Home({ playing, toggleMusic }) {
         };
 
     }, []);
+
+    useEffect(() => {
+
+        const app = appRef.current;
+
+        if (!app) return;
+
+        const popupOpen = showPopup || showPopup2 || showPopup3;
+
+        if (popupOpen) {
+
+            app.style.overflowY = "hidden";
+
+            document.body.style.overflow = "hidden";
+
+            document.documentElement.style.overflow = "hidden";
+
+        } else {
+
+            app.style.overflowY = "scroll";
+
+            document.body.style.overflow = "";
+
+            document.documentElement.style.overflow = "";
+
+        }
+
+        return () => {
+
+            app.style.overflowY = "scroll";
+
+            document.body.style.overflow = "";
+
+            document.documentElement.style.overflow = "";
+
+        };
+
+    }, [showPopup, showPopup2, showPopup3]);
 
 
     const depth100 = useRef(null);
@@ -292,7 +340,7 @@ function Home({ playing, toggleMusic }) {
                         더 깊은 곳으로
                     </button>
                 </div>
-            </section>
+            </section >
 
             <section
                 ref={depth500}
